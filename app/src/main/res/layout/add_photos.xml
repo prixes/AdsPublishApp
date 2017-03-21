@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="35dp"
+                    android:clickable="true"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/imgBtn1"
+                        style="?attr/radioButtonStyle"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:background="@xml/btn_shape"
+                        android:padding="10dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_photo" />
+
+                    <TextView
+                        android:id="@+id/txtName1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:maxLines="1"
+                        android:text="@string/none"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="35dp"
+                    android:orientation="vertical"
+                    tools:ignore="RtlHardcoded">
+
+                    <ImageButton
+                        android:id="@+id/imgBtn2"
+                        style="?attr/radioButtonStyle"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:background="@xml/btn_shape"
+                        android:padding="10dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_photo" />
+
+                    <TextView
+                        android:id="@+id/txtName2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:maxLines="1"
+                        android:text="@string/none"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="35dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/imgBtn3"
+                        style="?attr/radioButtonStyle"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:background="@xml/btn_shape"
+                        android:padding="10dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_photo" />
+
+                    <TextView
+                        android:id="@+id/txtName3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:maxLines="1"
+                        android:text="@string/none"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="35dp"
+                    android:orientation="vertical"
+                    tools:ignore="RtlHardcoded">
+
+                    <ImageButton
+                        android:id="@+id/imgBtn4"
+                        style="?attr/radioButtonStyle"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:background="@xml/btn_shape"
+                        android:padding="10dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_photo" />
+
+                    <TextView
+                        android:id="@+id/txtName4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:maxLines="1"
+                        android:text="@string/none"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="35dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/imgBtn5"
+                        style="?attr/radioButtonStyle"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:background="@xml/btn_shape"
+                        android:padding="10dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_photo" />
+
+                    <TextView
+                        android:id="@+id/txtName5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:maxLines="1"
+                        android:text="@string/none"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="35dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/imgBtn6"
+                        style="?attr/radioButtonStyle"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:background="@xml/btn_shape"
+                        android:padding="10dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_photo" />
+
+                    <TextView
+                        android:id="@+id/txtName6"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:maxLines="1"
+                        android:text="@string/none"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="79dp">
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+
+                android:layout_gravity="center"
+
+                android:background="@xml/btn_normal"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

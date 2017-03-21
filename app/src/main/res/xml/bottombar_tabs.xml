@@ -1,0 +1,10 @@
+<tabs>
+    <tab
+        id="@+id/tab_my_ads"
+        icon="@drawable/ic_my_ads"
+        title="My ads" />
+    <tab
+        id="@+id/tab_place_ads"
+        icon="@drawable/ic_place_ads"
+        title="Place ads" />
+</tabs>

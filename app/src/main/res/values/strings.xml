@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Prixesoft David App</string>
+    <string name="price">Price</string>
+    <string name="next">Next</string>
+    <string name="save">Save</string>
+    <string name="my_ads">My Ads</string>
+    <string name="place_ad">Place Ad</string>
+
+
+    <string-array name="spinnerCat">
+        <item>For Sale</item>
+        <item>Services</item>
+        <item>Vehicles</item>
+        <item>Property</item>
+    </string-array>
+
+
+
+    <string-array name="spinnerCurr">
+        <item>€</item>
+        <item>$</item>
+        <item>BGN</item>
+        <item>£</item>
+    </string-array>
+
+    <string name="error_field_required">Field is empty or too short !</string>
+    <string name="error_price">Only digits and a dot allowed! // Field empty! </string>
+    <string name="none">None</string>
+
+    <string name="no_ads_press_place_ad_to_add">List is empty. </string>
+    <string name="info_no_ads">If list is empty navigate to the next tab to create your new ads</string>
+
+    <string name="pick_image_intent_text">Choose resources</string>
+    <string name="location">Sofia, Bulgaria</string>
+    <string name="not_specified">Not Specified</string>
+    <string name="ok">Ok</string>
+
+</resources>

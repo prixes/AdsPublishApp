@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:orientation="vertical"
+    android:baselineAligned="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom|center"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:id="@+id/scrollView1"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_weight="5"
+                android:background="@android:color/white"
+                android:paddingTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/scrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical" />
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="5"
+                android:background="@xml/border_top"
+                android:gravity="top|center"
+                android:orientation="vertical"
+                android:paddingTop="10dp">
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="5dp"
+
+                    android:background="@xml/btn_normal"
+                    android:text="@string/save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+
+
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:text="@string/info_no_ads"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>
