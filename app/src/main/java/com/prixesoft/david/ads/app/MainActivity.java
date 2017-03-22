@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomBar bottomBar;
     private ImageButton btnBack;
-    private LinearLayout adView;
+
 
     private String adTitle,adCat,adSubCat,adDesc,adPrice,adCurr,adPhone;
     private boolean adShareFB,adShareLoc;
@@ -67,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
     private  Boolean imageType[] =new Boolean[6];
     private  int imageCounter=0;
 
-    private String layoutNames[] ={ "My Ads" , "Add Info","Add Photos" ,"Add Category" ,"Add Contacts"};
+    //Needs to add it in resources :)
+    private String layoutNames[] ={ "My Ads" , "Add Info", "Add Photos" ,"Add Category" ,"Add Contacts"};
     private LinearLayout layoutPage[]= new LinearLayout[5];
     private int currentLayout,previousLayout;
 
