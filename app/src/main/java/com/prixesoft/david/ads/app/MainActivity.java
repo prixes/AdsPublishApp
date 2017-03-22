@@ -49,17 +49,12 @@ import static com.prixesoft.david.ads.app.R.id.spSubCat;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
     private  EditText title, description, price, phone;
     private  Spinner category, subCategory ,currency;
     private  CheckBox shareFB,shareLoc;
 
-
     private  ImageButton btnImage[] =new ImageButton[6];
     private  TextView txtImage[] = new TextView[6];
-
-
     private  TextView actionBarTitle;
 
     private BottomBar bottomBar;
@@ -96,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         btnBack = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.btnBack);
 
 
+        // Getting all general layouts
         layoutPage[0] = (LinearLayout) findViewById(R.id.myAds);
         currentLayout= 0; previousLayout=0;
         layoutPage[1] = (LinearLayout) findViewById(R.id.adPlace);
@@ -103,29 +99,35 @@ public class MainActivity extends AppCompatActivity {
         layoutPage[3] = (LinearLayout) findViewById(R.id.addCategory);
         layoutPage[4] = (LinearLayout) findViewById(R.id.addContacts);
 
-
+        //Getting all the components of Ad Info layout
         title = (EditText) layoutPage[1].findViewById(R.id.txtTitle);
         description = (EditText) layoutPage[1].findViewById(R.id.txtDescription);
         price = (EditText) layoutPage[1].findViewById(R.id.txtPrice);
         currency = (Spinner) layoutPage[1].findViewById(R.id.spPrice);
 
-        btnImage[0] = (ImageButton) layoutPage[2].findViewById(R.id.imgBtn1);
+        //Getting all the components of Add Photos layout
         txtImage[0] = (TextView) layoutPage[2].findViewById(R.id.txtName1);
-        btnImage[1] = (ImageButton) layoutPage[2].findViewById(R.id.imgBtn2);
         txtImage[1] = (TextView) layoutPage[2].findViewById(R.id.txtName2);
-        btnImage[2] = (ImageButton) layoutPage[2].findViewById(R.id.imgBtn3);
         txtImage[2] = (TextView) layoutPage[2].findViewById(R.id.txtName3);
-        btnImage[3] = (ImageButton) layoutPage[2].findViewById(R.id.imgBtn4);
         txtImage[3] = (TextView) layoutPage[2].findViewById(R.id.txtName4);
-        btnImage[4] = (ImageButton) layoutPage[2].findViewById(R.id.imgBtn5);
         txtImage[4] = (TextView) layoutPage[2].findViewById(R.id.txtName5);
-        btnImage[5] = (ImageButton) layoutPage[2].findViewById(R.id.imgBtn6);
         txtImage[5] = (TextView) layoutPage[2].findViewById(R.id.txtName6);
 
+        btnImage[0] = (ImageButton) findViewById(R.id.imgBtn1);
+        btnImage[1] = (ImageButton) findViewById(R.id.imgBtn2);
+        btnImage[2] = (ImageButton) findViewById(R.id.imgBtn3);
+        btnImage[3] = (ImageButton) findViewById(R.id.imgBtn4);
+        btnImage[4] = (ImageButton) findViewById(R.id.imgBtn5);
+        btnImage[5] = (ImageButton) findViewById(R.id.imgBtn6);
+        //Tuk naprimerno vse oshte ne znam kak da optimiziram R.id.imgBtn[i] ciklichnost-a :)
 
+
+        //Getting all the components of Category layout
         category = (Spinner) layoutPage[3].findViewById(R.id.spCat);
         subCategory = (Spinner) layoutPage[3].findViewById(spSubCat);
 
+
+        //Getting all the components of Contracts layout
         phone = (EditText) layoutPage[4].findViewById(R.id.txtPhone);
         shareFB = (CheckBox) layoutPage[4].findViewById((R.id.checkFb));
         shareLoc =(CheckBox) layoutPage[4].findViewById((R.id.checkLoc));
@@ -134,62 +136,35 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinnerCat, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         category.setPrompt("Category!");
-
+        //Set adapter with custom hint style spinner
         category.setAdapter(
                 new HintSpinner(
                         adapter,
                         R.layout.hint_spinne_cat,
-                        // R.layout.contact_spinner_nothing_selected_dropdown, // Optional
                         this));
         MySpinner mySpinner= new MySpinner(this,category,subCategory);
         category.setOnItemSelectedListener(mySpinner);
 
-
-
-
+        // Back button listener
         btnBack.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 previousLayoutPage();
             }
         });
 
-        // the bottom tab bar
+
+        // Bottom tab bar listeners
         bottomBar = (BottomBar) findViewById(R.id.bottomBar);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
 
-                switch (tabId){
-                    case R.id.tab_place_ads:
-                        if(currentLayout == 0 && previousLayout == 0) nextLayoutPage();
+           bottomBarGetAction(tabId);
 
-                        if(currentLayout == 0 && previousLayout != 0) {
-                            currentLayout = previousLayout  ;
-                            if(previousLayout > 1 )  btnBack.setVisibility(View.VISIBLE);
-                                layoutPage[currentLayout].setVisibility(View.VISIBLE);
-                            actionBarTitle.setText(layoutNames[currentLayout]);
-                            layoutPage[0].setVisibility(View.INVISIBLE);
-                            previousLayout = 0;
-                        }
-                        break;
-                    case R.id.tab_my_ads:
-                        layoutPage[currentLayout].setVisibility(View.INVISIBLE);
-                        previousLayout = currentLayout;
-                        layoutPage[0].setVisibility(View.VISIBLE);
-                        actionBarTitle.setText(layoutNames[0]);
-                        btnBack.setVisibility(View.INVISIBLE);
-                        currentLayout = 0;
-                        break;
-                }
             }
         });
 
-        btnImage[0] = (ImageButton) findViewById(R.id.imgBtn1);
-        btnImage[1] = (ImageButton) findViewById(R.id.imgBtn2);
-        btnImage[2] = (ImageButton) findViewById(R.id.imgBtn3);
-        btnImage[3] = (ImageButton) findViewById(R.id.imgBtn4);
-        btnImage[4] = (ImageButton) findViewById(R.id.imgBtn5);
-        btnImage[5] = (ImageButton) findViewById(R.id.imgBtn6);
+
 
         // The image buttons actions mapping
         View.OnClickListener button_click = new View.OnClickListener() {
@@ -442,7 +417,34 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // Bottom Bar actions when buttons are pressed
+    void bottomBarGetAction(int tabId) {
+        switch (tabId) {
+            case R.id.tab_place_ads:
+                if (currentLayout == 0 && previousLayout == 0) nextLayoutPage();
 
+                if (currentLayout == 0 && previousLayout != 0) {
+                    currentLayout = previousLayout;
+                    if (previousLayout > 1) btnBack.setVisibility(View.VISIBLE);
+                    layoutPage[currentLayout].setVisibility(View.VISIBLE);
+                    actionBarTitle.setText(layoutNames[currentLayout]);
+                    layoutPage[0].setVisibility(View.INVISIBLE);
+                    previousLayout = 0;
+                }
+                break;
+            case R.id.tab_my_ads:
+                layoutPage[currentLayout].setVisibility(View.INVISIBLE);
+                previousLayout = currentLayout;
+                layoutPage[0].setVisibility(View.VISIBLE);
+                actionBarTitle.setText(layoutNames[0]);
+                btnBack.setVisibility(View.INVISIBLE);
+                currentLayout = 0;
+                break;
+        }
+    }
+
+
+    //Clean fields after ad is published
     void cleanFields(){
         title.setText("");
         category.setSelection(0);
